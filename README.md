@@ -11,11 +11,7 @@ Strips animation uses WebGL, modules are written in javascript (ES5) so you only
 
 ## Test
 
-An online demo is running on the following address : 
-
-```
-http://theplatypus.fr:8000/demo/index.html
-```
+An online demo is running on the following address : [http://theplatypus.fr:8000/demo/index.html](http://theplatypus.fr:8000/demo/index.html)
 
 ### Get the code
 

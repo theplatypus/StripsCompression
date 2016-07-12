@@ -1,0 +1,26 @@
+{
+  "name": "strips-compression",
+  "version": "1.0.0",
+  "description": "Topologic compression of trianglar mesh",
+  "main": "demo/index.html",
+  "scripts": {
+    "test": "python -m SimpleHTTPServer"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theplatypus/StripsCompression.git"
+  },
+  "keywords": [
+    "WebGL",
+    "Mesh",
+    "Compression",
+    "Topologic",
+    "TriangleStrip"
+  ],
+  "author": "thePlatypus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theplatypus/StripsCompression/issues"
+  },
+  "homepage": "https://github.com/theplatypus/StripsCompression#readme"
+}

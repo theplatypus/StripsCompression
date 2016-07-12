@@ -7,14 +7,14 @@ function main(){
 
 	// adapt canvas size to screen
 	var width = window.innerWidth * 0.75 ;
-	var height = (window.innerHeight-100) * 0.80 ; 
+	var height = (window.innerHeight-100) * 0.80 ;
 	document.getElementById("glcanvas").width = width ;
 	document.getElementById("glcanvas").height = height ;
-	draw_strips.canvasWidth = width ; 
+	draw_strips.canvasWidth = width ;
 	draw_strips.canvasHeight = height ;
 
 	// bind the texture/UVs, vertices and normals (common to indexes)
-	draw_strips.init("glcanvas",mesh.vertices, mesh.vertexNormals, mesh.textures, "./texture2.jpg");
+	draw_strips.init("glcanvas",mesh.vertices, mesh.vertexNormals, mesh.textures, "../DATA/texture2.jpg");
 
 	// TRIANGLES -> TRIANGLE_STRIPS (strips obtained are stored in compress_mesh.strips)
 	compress_mesh.compress(mesh.indices);
@@ -66,7 +66,7 @@ function handleFiles(files) {
 
 /**
  *	Display the current progress of compression step
- *	
+ *
  *	TODO : does not work properly, maybe with WebWorkers
  */
 function progressBar(val) {

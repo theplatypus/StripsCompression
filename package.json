@@ -4,7 +4,7 @@
   "description": "Topologic compression of trianglar mesh",
   "main": "demo/index.html",
   "scripts": {
-    "test": "python -m SimpleHTTPServer"
+    "test": "http-server -p 8000"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/theplatypus/StripsCompression/issues"
   },
-  "homepage": "https://github.com/theplatypus/StripsCompression#readme"
+  "homepage": "https://github.com/theplatypus/StripsCompression#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
 }

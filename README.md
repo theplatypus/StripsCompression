@@ -51,10 +51,23 @@ http://127.0.0.1:8000/demo/index.html
 
 And you will get the following toy application. (./DATA/cat.obj example)
 
-![screenshot](https://github.com/theplatypus/StripsCompression/blob/master/demo/screen.pdf)
+![screenshot](https://raw.githubusercontent.com/theplatypus/StripsCompression/master/demo/screen.png)
 
 ## More about topologic compression...
 
 
 ## Credits
 
+### misc folder
+
+The files contained in the 'misc' folder are not from my own work.
+All credits go to their respective authors, linked below :
+
+- frenchtoast747 for [webgl-obj-loader](https://github.com/frenchtoast747/webgl-obj-loader)
+- (unknown author) for [glutils](https://gist.github.com/zdxerr/1261307#file-glutils-js)
+- James Coglan for [sylvester](https://github.com/jcoglan/sylvester)
+
+### lib folder
+
+The files contained in the 'lib' folder are from my work.
+As the misc libraries, I provide them under the MIT License, so feel free to do whatever you want with it... and fork it !

@@ -24,19 +24,19 @@ To access interface without file access issues, you need to serve it through a H
 There are many ways to do it, for example : 
 
 ```bash
+# if node.js & npm are installed
+npm install
+npm test
+
 # python 2.7
 python -m SimpleHTTPServer
 
 # python 3.x
 python -m http.server
 
-# node.js & npm
+# node.js & npm, general case
 npm install http-server -g
 http-server -p 8000
-
-# or more simply...
-npm install
-npm test
 
 # or the way you are able to run a HTTP server on port 8000 :)
 ```

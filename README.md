@@ -53,8 +53,13 @@ And you will get the following toy application. (./DATA/cat.obj example)
 
 ![screenshot](https://raw.githubusercontent.com/theplatypus/StripsCompression/master/demo/screen.png)
 
+This cat is a pretty good example, as we can see a long strip on its spine, and get a compression rate of 40%, which is quite good.
+
+By default, stripes are drawed themselves, but you can stop it unchecking 'drawing' button, and see stripes construction step by step by increasing the footer counter.
+
 ## More about topologic compression...
 
+If you want learn more about topologic compression (and you are right), more details can be found in the 'more' folder.
 
 ## Credits
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<script type="text/javascript" src="./lib/sylvester.js" ></script>
+
+		<script type="text/javascript" src="./lib/gl_utils.js" ></script>
+
+		<script type="text/javascript" src="./lib/webgl-obj-loader.js" ></script>
+
+
+		<!-- VERTEX SHADER -->
+		<script id="shader-vs" type="x-shader/x-vertex">
+
+			  attribute highp vec3 aVertexNormal;
+			  attribute highp vec3 aVertexPosition;
+			  attribute highp vec2 aTextureCoord;
+
+			  uniform highp mat4 uNormalMatrix;
+			  uniform highp mat4 uMVMatrix;
+			  uniform highp mat4 uPMatrix;
+			  
+			  varying highp vec2 vTextureCoord;
+			  varying highp vec3 vLighting;
+
+			  void main(void) {
+			    gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+			    vTextureCoord = aTextureCoord;
+			    
+			    // Apply lighting effect
+			    
+			    highp vec3 ambientLight = vec3(0.6, 0.6, 0.6);
+			    highp vec3 directionalLightColor = vec3(0.5, 0.5, 0.75);
+			    highp vec3 directionalVector = vec3(0.85, 0.8, 0.75);
+			    
+			    highp vec4 transformedNormal = uNormalMatrix * vec4(aVertexNormal, 1.0);
+			    
+			    highp float directional = max(dot(transformedNormal.xyz, directionalVector), 0.0);
+			    vLighting = ambientLight + (directionalLightColor * directional);
+			  }
+
+		</script>
+
+		<!-- FRAGMENT SHADER -->
+		<script id="shader-fs" type="x-shader/x-fragment">
+
+			varying highp vec2 vTextureCoord;
+			varying highp vec3 vLighting;
+		  
+			uniform sampler2D uSampler;
+		  
+			void main(void) {
+				mediump vec4 texelColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+		    
+				gl_FragColor = vec4(texelColor.rgb * vLighting, texelColor.a);
+			}
+
+		</script>
+
+		<script type="text/javascript" src="./compress_mesh.js" ></script>
+
+		<script type="text/javascript" src="./draw_strips.js" ></script>
+
+		<script type="text/javascript" src="./main.js" ></script>
+
+	</head>
+
+	<body>
+
+		<div id="obj_file" style="display : none"></div>
+
+		<input id="fileInput" type="file" accept="*" onchange="handleFiles(this.files)">
+		<br><br>
+		<progress id="progressBar" value="0" max="100" style="width:500px;"></progress>
+		<span id="status"></span>
+		<br><br>
+		<canvas id="glcanvas"> 
+			Votre navigateur ne semble pas supporter l'élément HTML5 <code>&lt;canvas&gt;</code>.
+		</canvas>
+		<br><br>
+		Move X : <input id="moveX" type="number" onchange="moveX()" value="0" step="0.2"> AutoX : <input id="rotX" type="number" onchange="rotateX()" value="0" step="5"><input type="checkbox" id="toggleX" onchange="toggleX()" ><br>
+		Move Y : <input id="moveY" type="number" onchange="moveY()" value="0" step="0.2"> AutoY : <input id="rotY" type="number" onchange="rotateY()" value="0" step="5"><input type="checkbox" id="toggleY" onchange="toggleY()" ><br>
+		Move Z : <input id="moveZ" type="number" onchange="moveZ()" value="0" step="0.2"> AutoZ : <input id="rotZ" type="number" onchange="rotateZ()" value="0" step="5"><input type="checkbox" id="toggleZ" onchange="toggleZ()" ><br>
+		Drawing Speed : <input id="drawingSpeed" type="number" onchange="drawingSpeed()" value="25"> Drawing : <input type="checkbox" checked id="toggleStrips" onchange="toggleStrips()"><br>
+		Step : <button onclick="minus()">-</button><input id="forceDraw" type="number" min="3" value="3" onchange="draw()"><button onclick="plus()">+</button>
+
+		<div id="stats" style="position : fixed ; right : 15px ; top : 15px ; border-width : 1px;">
+			
+		</div>
+		
+	</body>
+
+</html>

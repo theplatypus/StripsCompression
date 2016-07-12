@@ -11,7 +11,15 @@ Strips animation uses WebGL, modules are written in javascript (ES5) so you only
 
 ## Test
 
+An online demo is running on the following address : 
+
+```
+http://theplatypus.fr:8000/demo/index.html
+```
+
 ### Get the code
+
+If you want to test it locally,
 
 ```bash
 git clone https://github.com/theplatypus/StripsCompression.git

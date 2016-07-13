@@ -1,4 +1,4 @@
-To learn more about topologic compression, you will find my very basic slides here.
+To learn more about topologic compression, you will find here my very basic slides.
 
 To go further, I suggest you to read the followinf articles : 
 

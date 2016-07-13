@@ -1,6 +1,6 @@
 To learn more about topologic compression, you will find here my very basic slides.
 
-To go further, I suggest you to read the followinf articles : 
+To go further, I suggest you to read the following articles : 
 
 - ISENBURG, Martin. Triangle strip compression. In : Computer Graphics Forum. Blackwell Publishers Ltd, 2001. p. 91-101.
 

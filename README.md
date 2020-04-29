@@ -1,17 +1,13 @@
 # StripsCompression
 
-## Abstract
+## Synopsis
 
 Academic project to illustrate the topologic compression (lossless) principle.
 Instead of describe a mesh triangle by triangle, common sides are aggregated in strips.
 Despite its naive implementation, compression rate could reach up to 40% on simple meshes.
 
 To illustrate those strips, a "toy web-interface" can vizualize this mesh-cutting, animating strips construction.
-Strips animation uses WebGL, modules are written in javascript (ES5) so you only require a WebGL-friendly browser (Chrome, Opera, FF, ..., !IE) to launch a demo !
-
-## Test
-
-An online demo is running on the following address : [http://theplatypus.fr:8000/demo/index.html](http://theplatypus.fr:8000/demo/index.html)
+Strips animation uses WebGL, modules are written in javascript (ES5) so you only require a WebGL-friendly browser (Chrome, Opera, FF, ...) to launch a demo !
 
 ### Get the code
 
@@ -41,19 +37,17 @@ python -m http.server
 # node.js & npm, general case
 npm install http-server -g
 http-server -p 8000
-
-# or the way you are able to run a HTTP server on port 8000 :)
 ```
 
 ### WebApp
 
-Go to the following address with your favorite browser (except in the case it is IE < 11 ahah)
+Go to the following address with your WebGL-compatible browser
 
 ```
 http://127.0.0.1:8000/demo/index.html
 ```
 
-And you will get the following toy application. (./DATA/cat.obj example)
+And you will get to the following toy application. (./DATA/cat.obj example)
 
 ![screenshot](https://raw.githubusercontent.com/theplatypus/StripsCompression/master/demo/screen.png)
 
@@ -63,7 +57,7 @@ By default, stripes are drawed themselves, but you can stop it unchecking 'drawi
 
 ## More about topologic compression...
 
-If you want learn more about topologic compression (and you are right), more details can be found in the 'more' folder.
+If you want learn more about topologic compression, more details can be found in the `more/` folder.
 
 ## Credits
 
